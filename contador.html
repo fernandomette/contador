@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Contador </title>
-    </head>
-    <body>
-        
-        <h1>Contador</h1>
-        <p id="number">0</p>
-        <button>Mais</button>
-        <script>
-            confirm("Ola Mundo !")
 
-        </script>
-        
+<head>
+    <title> Contador </title>
+</head>
 
+<body>
+    <h1>Contador</h1>
+    <p id="number">0</p>
+    <button onclick="somar()">Mais</button>
+    <script>
+        function somar() {
+            // pegar o valor atual
+            var num = parseInt(document.querySelector("#number").innerText)
+            console.log(num)
 
-    </body>
+            // somar mais 1
+            num++
+            console.log(num)
+
+            // atualizar o resultado
+            document.querySelector("#number").innerText = num
+
+        }
+    </script>
+</body>
+
 </html>
