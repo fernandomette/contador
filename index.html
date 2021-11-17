@@ -30,35 +30,71 @@
         }
 
     </style>
-    
+
 </head>
 
-<body>
+<br>
     <h1>Sistema de Calculadora</h1>
+    <form>
 
-    <input type="text" id="caixanumerodigitado" size="1" value="0"><br>
-    <br>
+    </form>
+        <input type="text" id="caixanumerodigitado" name="caixanumerodigitado" size="1" value="0" required>
+        <br> </br>
 
-    <button onclick="somar()">Somar</button> 
-    <button onclick="diminuir()">Diminuir</button>
-    <button onclick="multiplicar()">Multiplicar</button>
-    <button onclick="dividir()">Dividir</button>
-  
+        <input type="submit" onclick="somar()" value="Somar (+)">
+        <input type="submit" onclick="diminuir()"  value="Diminuir (-)">
+        <input type="submit" onclick="multiplicar()" value="Multiplicar (x)">
+        <input type="submit" onclick="dividir()"  value="Dividir (/)">
+    </form>
+
     <h3>Resultado:</h3>
     <p id="resultado">0</p>
 
-    <button onclick="zerarresultado()">Zerar Resultado</button><br>
-    <br>
+    <button onclick="zerarresultado()">Zerar Resultado</button>
+    <br> </br>
 
-    <ul id="divlist"> <li> Hit the gym </li> </ul>
+    <p id="listahistorico"></p>
+	<div id="listahistorico"></div>
 
     <script>
+
+        var listadehistorico = [qualquer = []]
+
+        function CriaUlLI(array) 
+            {
+                var listhistoricoul = document.createElement('ul')
+
+                var item = document.createElement('li')
+
+                for(var i = 0; i < array.length; i++) 
+                    {
+                        item.appendChild(document.createTextNode(array[i]));
+                        listhistoricoul.appendChild(item);
+                    }
+
+                // Retorne a lista construída:
+                return listhistoricoul;
+            }
+        
         function somar() {
 
                 var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
 
-                document.querySelector("#resultado").innerText = numerodigitado
+                var resultado = parseFloat(document.querySelector("#resultado").innerText)
+                
+                var valoranterior = resultado
 
+                resultado = resultado + numerodigitado
+
+                document.querySelector("#resultado").innerText = resultado
+
+                document.getElementById("caixanumerodigitado").value = ""
+
+                qualquer.splice(0, qualquer.length);
+
+                qualquer.push(numerodigitado, " + ", valoranterior , ' = ', resultado)
+
+                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
 
         }
         
@@ -67,12 +103,20 @@
                 var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
+
+                var valoranterior = resultado
     
                 resultado = resultado - numerodigitado
                
                 document.querySelector("#resultado").innerText = resultado
     
-                document.getElementById("caixanumerodigitado").value = 0
+                document.getElementById("caixanumerodigitado").value = ""
+
+                qualquer.splice(0, qualquer.length);
+
+                qualquer.push(numerodigitado, " - ", valoranterior , ' = ', resultado)
+
+                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
 
         }
 
@@ -81,12 +125,20 @@
                 var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
+
+                var valoranterior = resultado
     
                 resultado = resultado * numerodigitado
                
                 document.querySelector("#resultado").innerText = resultado
     
-                document.getElementById("caixanumerodigitado").value = 0
+                document.getElementById("caixanumerodigitado").value = ""
+
+                qualquer.splice(0, qualquer.length);
+
+                qualquer.push(numerodigitado, " x ", valoranterior , ' = ', resultado)
+
+                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
 
         }
 
@@ -95,12 +147,20 @@
                 var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
+
+                var valoranterior = resultado
     
                 resultado = resultado / numerodigitado
                
                 document.querySelector("#resultado").innerText = resultado
     
-                document.getElementById("caixanumerodigitado").value = 0
+                document.getElementById("caixanumerodigitado").value = ""
+
+                qualquer.splice(0, qualquer.length);
+
+                qualquer.push(numerodigitado, " / ", valoranterior , ' = ', resultado)
+
+                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
 
         }
 
