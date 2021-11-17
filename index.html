@@ -1,18 +1,43 @@
-require 'CSS.style'; 
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <title> Contador </title>
+
+    <style>
+        body 
+            {
+            text-align: center;
+            font-family: arial, sans-serif;
+            }
+                    
+        h1{
+            font-size: 48px;
+            color: #066a75;
+            padding: 10px 0;
+            font-family: Arial,sans-serif;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        ul li {
+        background: #eee;
+        font-size: 18px;
+        text-align: center;
+        font-family: Arial,sans-serif;
+        text-align: center;
+        }
+
+    </style>
+    
 </head>
 
 <body>
     <h1>Sistema de Calculadora</h1>
 
-    <td><input type="text" id="caixanumerodigitado" size="1" value="0"><br /></td>
-
-    <h1></h1>
+    <input type="text" id="caixanumerodigitado" size="1" value="0"><br>
+    <br>
 
     <button onclick="somar()">Somar</button> 
     <button onclick="diminuir()">Diminuir</button>
@@ -22,14 +47,10 @@ require 'CSS.style';
     <h3>Resultado:</h3>
     <p id="resultado">0</p>
 
-    <h1></h1>
+    <button onclick="zerarresultado()">Zerar Resultado</button><br>
+    <br>
 
-    <button onclick="zerarresultado()">Zerar Resultado</button>
-
-    <div id="divlist" class="header">
-        <input type="text" id="myInput" placeholder="historico">
-        <span onclick="newElement()" class="addBtn">Add</span>
-    </div>
+    <ul id="divlist"> <li> Hit the gym </li> </ul>
 
     <script>
         function somar() {
