@@ -1,9 +1,9 @@
- <script>
 
         var listadehistorico = [qualquer = []]
 
         function CriaUlLI(array) 
             {
+
                 var listhistoricoul = document.createElement('ul')
 
                 var item = document.createElement('li')
@@ -113,5 +113,3 @@
             document.getElementById("caixanumerodigitado").value = 0
 
         }
-
-    </script>
