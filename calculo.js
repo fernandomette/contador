@@ -32,7 +32,9 @@
         
         function somar() {
 
-                var numerodigitado = verificaValorZero ();
+                var numerodigitado = verificaValorZero ()
+                
+                print(numerodigitado)
 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
                 
