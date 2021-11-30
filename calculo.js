@@ -32,8 +32,12 @@
         
         function somar() {
 
-                var numerodigitado = verificaValorZero ()
-                
+                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+
+                if (numerodigitado != null) {
+                    numerodigitado = 0;
+                } 
+
                 print(numerodigitado)
 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
