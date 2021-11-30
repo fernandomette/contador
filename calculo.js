@@ -5,7 +5,7 @@
         {
             var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
 
-            if (numerodigitado == null) {
+            if (numerodigitado == "") {
                 return numerodigitado = 0;
             } 
             else {
