@@ -98,7 +98,7 @@
 
         function dividir() {
 
-                var numerodigitado = verificaValorZero ();)
+                var numerodigitado = verificaValorZero ();
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
