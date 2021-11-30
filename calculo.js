@@ -59,11 +59,13 @@
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
                 var valoranterior = resultado
-    
-                resultado = resultado - numerodigitado
                
+                if (numerodigitado != ""){
+                    resultado = resultado - numerodigitado
+                }
+
                 document.querySelector("#resultado").innerText = resultado
-    
+
                 document.getElementById("caixanumerodigitado").value = ""
 
                 qualquer.splice(0, qualquer.length);
