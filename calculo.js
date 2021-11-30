@@ -5,7 +5,7 @@
         {
             var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
 
-            if (numerodigitado != null) {
+            if (numerodigitado == null) {
                 return numerodigitado = 0;
             } 
             else {
@@ -32,12 +32,8 @@
         
         function somar() {
 
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
-
-                if (numerodigitado != null) {
-                    numerodigitado = 0;
-                } 
-
+                var numerodigitado = verificaValorZero ()
+                
                 print(numerodigitado)
 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
