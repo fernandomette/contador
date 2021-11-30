@@ -54,7 +54,7 @@
         
         function diminuir() {
 
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                var numerodigitado = verificaValorZero ();
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
@@ -76,7 +76,7 @@
 
         function multiplicar() {
 
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                var numerodigitado = verificaValorZero ();
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
@@ -98,7 +98,7 @@
 
         function dividir() {
 
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                var numerodigitado = verificaValorZero ();)
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
