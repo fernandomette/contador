@@ -100,21 +100,43 @@
 
                 var numerodigitado = verificaValorZero ();
                 
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
+                if (numerodigitado != 0) {
 
-                var valoranterior = resultado
+                    var resultado = parseFloat(document.querySelector("#resultado").innerText)
+
+                    var valoranterior = resultado
+        
+                    resultado = resultado / numerodigitado
+                   
+                    document.querySelector("#resultado").innerText = resultado
+        
+                    document.getElementById("caixanumerodigitado").value = ""
     
-                resultado = resultado / numerodigitado
-               
-                document.querySelector("#resultado").innerText = resultado
+                    qualquer.splice(0, qualquer.length);
     
-                document.getElementById("caixanumerodigitado").value = ""
+                    qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
+    
+                    document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+                    
+                } else {
 
-                qualquer.splice(0, qualquer.length);
+                    var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
-                qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
-
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+                    var valoranterior = resultado
+        
+                    resultado = 0
+                   
+                    document.querySelector("#resultado").innerText = resultado
+        
+                    document.getElementById("caixanumerodigitado").value = ""
+    
+                    qualquer.splice(0, qualquer.length);
+    
+                    qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
+    
+                    document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+                    
+                }
 
         }
 
