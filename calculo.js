@@ -9,7 +9,7 @@
                 return numerodigitado = 0;
             } 
             else {
-                return numerodigitado
+                return numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
             }
         }
 
