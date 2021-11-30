@@ -1,6 +1,18 @@
 
         var listadehistorico = [qualquer = []]
 
+        function verificaValorZero ()
+        {
+            var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+
+            if (numerodigitado != null) {
+                return numerodigitado = 0;
+            } 
+            else {
+                return numerodigitado
+            }
+        }
+
         function CriaUlLI(array) 
             {
 
@@ -20,7 +32,7 @@
         
         function somar() {
 
-                var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+                var numerodigitado = verificaValorZero ();
 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
                 
