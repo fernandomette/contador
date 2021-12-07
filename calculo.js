@@ -1,17 +1,16 @@
 
         var listadehistorico = [qualquer = []]
 
-        function verificaValorZero ()
-        {
-            var numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
-
-            if (numerodigitado == "") {
-                return numerodigitado = 0;
-            } 
-            else {
-                return numerodigitado = parseFloat(document.getElementById("caixanumerodigitado").value)
+        function recebeZeroseVazio(valorCaixadeTexto) {
+    
+            if (isNaN(valorCaixadeTexto)) {
+              valorCaixadeTexto = 0;
+            }else{
+              valorCaixadeTexto = valorCaixadeTexto;
             }
-        }
+              
+            return valorCaixadeTexto
+          }
 
         function CriaUlLI(array) 
             {
@@ -32,7 +31,7 @@
         
         function somar() {
 
-                var numerodigitado = verificaValorZero ()
+                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
                 
@@ -43,6 +42,7 @@
                 document.querySelector("#resultado").innerText = resultado
 
                 document.getElementById("caixanumerodigitado").value = ""
+                document.getElementById('caixanumerodigitado').focus()
 
                 qualquer.splice(0, qualquer.length);
 
@@ -54,7 +54,7 @@
         
         function diminuir() {
 
-                var numerodigitado = verificaValorZero ();
+                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
@@ -67,6 +67,7 @@
                 document.querySelector("#resultado").innerText = resultado
 
                 document.getElementById("caixanumerodigitado").value = ""
+                document.getElementById('caixanumerodigitado').focus()
 
                 qualquer.splice(0, qualquer.length);
 
@@ -78,7 +79,7 @@
 
         function multiplicar() {
 
-                var numerodigitado = verificaValorZero ();
+                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
                 
                 var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
@@ -89,6 +90,7 @@
                 document.querySelector("#resultado").innerText = resultado
     
                 document.getElementById("caixanumerodigitado").value = ""
+                document.getElementById('caixanumerodigitado').focus()
 
                 qualquer.splice(0, qualquer.length);
 
@@ -100,7 +102,7 @@
 
         function dividir() {
 
-                var numerodigitado = verificaValorZero ();
+                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
                 
                 if (numerodigitado != 0) {
 
@@ -113,6 +115,7 @@
                     document.querySelector("#resultado").innerText = resultado
         
                     document.getElementById("caixanumerodigitado").value = ""
+                    document.getElementById('caixanumerodigitado').focus()
     
                     qualquer.splice(0, qualquer.length);
     
@@ -131,6 +134,8 @@
                     document.querySelector("#resultado").innerText = resultado
         
                     document.getElementById("caixanumerodigitado").value = ""
+
+                    document.getElementById('caixanumerodigitado').focus()
     
                     qualquer.splice(0, qualquer.length);
     
@@ -144,8 +149,12 @@
 
         function zerarresultado() {
 
-            document.querySelector("#resultado").innerText = 0
+            document.querySelector("#resultado").innerText = 0;
             
-            document.getElementById("caixanumerodigitado").value = 0
+            document.getElementById("caixanumerodigitado").value = "";
+
+            document.getElementById('caixanumerodigitado').focus();
+
+             }
 
         }
