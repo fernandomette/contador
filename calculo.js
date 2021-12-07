@@ -63,9 +63,7 @@ function diminuir()
 
         var valoranterior = resultado
         
-        if (numerodigitado != ""){
-            resultado = resultado - numerodigitado
-        }d
+        resultado = resultado - numerodigitado
 
         document.querySelector("#resultado").innerText = resultado
 
