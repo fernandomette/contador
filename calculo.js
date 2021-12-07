@@ -1,160 +1,164 @@
 
-        var listadehistorico = [qualquer = []]
+var listadehistorico = [qualquer = []]
 
-        function recebeZeroseVazio(valorCaixadeTexto) {
-    
-            if (isNaN(valorCaixadeTexto)) {
-              valorCaixadeTexto = 0;
-            }else{
-              valorCaixadeTexto = valorCaixadeTexto;
-            }
-              
-            return valorCaixadeTexto
-          }
+function recebeZeroseVazio(valorCaixadeTexto) 
+    {
 
-        function CriaUlLI(array) 
+    if (isNaN(valorCaixadeTexto)) {
+        valorCaixadeTexto = 0;
+    }else{
+        valorCaixadeTexto = valorCaixadeTexto;
+    }
+        
+    return valorCaixadeTexto
+    }
+
+function CriaUlLI(array) 
+    {
+
+        const itemlu = document.createElement('ul')
+
+        const itemli = document.createElement('li')
+
+        for(var i = 0; i < array.length; i++) 
             {
-
-                const itemlu = document.createElement('ul')
-
-                const itemli = document.createElement('li')
-
-                for(var i = 0; i < array.length; i++) 
-                    {
-                        itemli.appendChild(document.createTextNode(array[i]));
-                        itemlu.appendChild(itemli);
-                    }
-
-                // Retorne a lista construída:
-                return itemlu;
+                itemli.appendChild(document.createTextNode(array[i]));
+                itemlu.appendChild(itemli);
             }
+
+        // Retorne a lista construída:
+        return itemlu;
+    }
+
+function somar() 
+    {
+
+        var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
+
+        var resultado = parseFloat(document.querySelector("#resultado").innerText)
         
-        function somar() {
+        var valoranterior = resultado
 
-                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
+        resultado = resultado + numerodigitado
 
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
-                
-                var valoranterior = resultado
+        document.querySelector("#resultado").innerText = resultado
 
-                resultado = resultado + numerodigitado
+        document.getElementById("caixanumerodigitado").value = ""
+        document.getElementById('caixanumerodigitado').focus()
 
-                document.querySelector("#resultado").innerText = resultado
+        qualquer.splice(0, qualquer.length);
 
-                document.getElementById("caixanumerodigitado").value = ""
-                document.getElementById('caixanumerodigitado').focus()
+        qualquer.push(valoranterior, " + ", numerodigitado , ' = ', resultado)
 
-                qualquer.splice(0, qualquer.length);
+        document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
 
-                qualquer.push(valoranterior, " + ", numerodigitado , ' = ', resultado)
+    }      
 
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+function diminuir() 
+    {
 
-        }
+        var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
         
-        function diminuir() {
+        var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
-                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
-                
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
-
-                var valoranterior = resultado
-               
-                if (numerodigitado != ""){
-                    resultado = resultado - numerodigitado
-                }
-
-                document.querySelector("#resultado").innerText = resultado
-
-                document.getElementById("caixanumerodigitado").value = ""
-                document.getElementById('caixanumerodigitado').focus()
-
-                qualquer.splice(0, qualquer.length);
-
-                qualquer.push(valoranterior, " - ", numerodigitado , ' = ', resultado)
-
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-
-        }
-
-        function multiplicar() {
-
-                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
-                
-                var resultado = parseFloat(document.querySelector("#resultado").innerText)
-
-                var valoranterior = resultado
-    
-                resultado = resultado * numerodigitado
-               
-                document.querySelector("#resultado").innerText = resultado
-    
-                document.getElementById("caixanumerodigitado").value = ""
-                document.getElementById('caixanumerodigitado').focus()
-
-                qualquer.splice(0, qualquer.length);
-
-                qualquer.push(valoranterior, " x ", numerodigitado , ' = ', resultado)
-
-                document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-
-        }
-
-        function dividir() {
-
-                var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
-                
-                if (numerodigitado != 0) {
-
-                    var resultado = parseFloat(document.querySelector("#resultado").innerText)
-
-                    var valoranterior = resultado
+        var valoranterior = resultado
         
-                    resultado = resultado / numerodigitado
-                   
-                    document.querySelector("#resultado").innerText = resultado
+        if (numerodigitado != ""){
+            resultado = resultado - numerodigitado
+        }d
+
+        document.querySelector("#resultado").innerText = resultado
+
+        document.getElementById("caixanumerodigitado").value = ""
+        document.getElementById('caixanumerodigitado').focus()
+
+        qualquer.splice(0, qualquer.length);
+
+        qualquer.push(valoranterior, " - ", numerodigitado , ' = ', resultado)
+
+        document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+
+    }
+
+function multiplicar() 
+    {
+
+        var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
         
-                    document.getElementById("caixanumerodigitado").value = ""
-                    document.getElementById('caixanumerodigitado').focus()
-    
-                    qualquer.splice(0, qualquer.length);
-    
-                    qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
-    
-                    document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-                    
-                } else {
+        var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
-                    var resultado = parseFloat(document.querySelector("#resultado").innerText)
+        var valoranterior = resultado
 
-                    var valoranterior = resultado
+        resultado = resultado * numerodigitado
         
-                    resultado = 0
-                   
-                    document.querySelector("#resultado").innerText = resultado
+        document.querySelector("#resultado").innerText = resultado
+
+        document.getElementById("caixanumerodigitado").value = ""
+        document.getElementById('caixanumerodigitado').focus()
+
+        qualquer.splice(0, qualquer.length);
+
+        qualquer.push(valoranterior, " x ", numerodigitado , ' = ', resultado)
+
+        document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+
+    }
+
+function dividir() 
+    {
+
+        var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
         
-                    document.getElementById("caixanumerodigitado").value = ""
+        if (numerodigitado != 0) {
 
-                    document.getElementById('caixanumerodigitado').focus()
-    
-                    qualquer.splice(0, qualquer.length);
-    
-                    qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
-    
-                    document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
-                    
-                }
+            var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
-        }
+            var valoranterior = resultado
 
-        function zerarresultado() {
-
-            document.querySelector("#resultado").innerText = 0;
+            resultado = resultado / numerodigitado
             
-            document.getElementById("caixanumerodigitado").value = "";
+            document.querySelector("#resultado").innerText = resultado
 
-            document.getElementById('caixanumerodigitado').focus();
+            document.getElementById("caixanumerodigitado").value = ""
+            document.getElementById('caixanumerodigitado').focus()
 
-             }
+            qualquer.splice(0, qualquer.length);
 
+            qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
+
+            document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+            
+        } else {
+
+            var resultado = parseFloat(document.querySelector("#resultado").innerText)
+
+            var valoranterior = resultado
+
+            resultado = 0
+            
+            document.querySelector("#resultado").innerText = resultado
+
+            document.getElementById("caixanumerodigitado").value = ""
+
+            document.getElementById('caixanumerodigitado').focus()
+
+            qualquer.splice(0, qualquer.length);
+
+            qualquer.push(valoranterior, " / ", numerodigitado , ' = ', resultado)
+
+            document.getElementById('listahistorico').appendChild(CriaUlLI(listadehistorico[0]))
+            
         }
+
+    }
+
+function zerarresultado() 
+    {
+
+    document.querySelector("#resultado").innerText = 0
+    
+    document.getElementById("caixanumerodigitado").value = ""
+
+    document.getElementById('caixanumerodigitado').focus()
+
+    }
