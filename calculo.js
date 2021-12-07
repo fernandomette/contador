@@ -16,18 +16,18 @@
         function CriaUlLI(array) 
             {
 
-                var listhistoricoul = document.createElement('ul')
+                var itemlu = document.createElement('ul')
 
-                var item = document.createElement('li')
+                var itemli = document.createElement('li')
 
                 for(var i = 0; i < array.length; i++) 
                     {
-                        item.appendChild(document.createTextNode(array[i]));
-                        listhistoricoul.appendChild(item);
+                        itemli.appendChild(document.createTextNode(array[i]));
+                        itemlu.appendChild(itemli);
                     }
 
                 // Retorne a lista construída:
-                return listhistoricoul;
+                return itemlu;
             }
         
         function somar() {
