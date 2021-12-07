@@ -1,5 +1,5 @@
 
-        var listadehistorico = [qualquer = []]
+        var qualquer = [];
 
         function verificaValorZero ()
         {
