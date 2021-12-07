@@ -58,11 +58,11 @@ function diminuir()
     {
 
         var numerodigitado = recebeZeroseVazio(parseFloat(document.getElementById("caixanumerodigitado").value)) 
-        
-        var resultado = parseFloat(document.querySelector("#resultado").innerText)
 
-        var valoranterior = resultado
+        var resultado = parseFloat(document.querySelector("#resultado").innerText)
         
+        var valoranterior = resultado
+
         resultado = resultado - numerodigitado
 
         document.querySelector("#resultado").innerText = resultado
