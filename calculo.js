@@ -16,9 +16,9 @@
         function CriaUlLI(array) 
             {
 
-                var itemlu = document.createElement('ul')
+                const itemlu = document.createElement('ul')
 
-                var itemli = document.createElement('li')
+                const itemli = document.createElement('li')
 
                 for(var i = 0; i < array.length; i++) 
                     {
